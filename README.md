@@ -16,7 +16,12 @@ viewers and create nice images. Another feature of MRIcroGL I absolutely love, i
 the rendering of 3D volumes rather than just plotting of slices at specific coordinates.
 It just looks fancy!
 
-# Installation
+# Set up for the tutorial
+
+git clone https://github.com/LeSasse/intro_to_mricrogl_scripting.git
+cd intro_to_mricrogl_scripting  
+
+# Install MRIcroGL
 
 Download the version that works for your system from the [MRIcroGL NITRC page](https://www.nitrc.org/projects/mricrogl).
 
@@ -50,7 +55,28 @@ switching between the upper and lower cased letters. Again, in your `zshrc` add:
 ```
 alias mricrogl="MRIcroGL"
 ```
-and again make sure to source the `zshrc` or start up a new terminal. Now, running
-`mricrogl` should start up the program also. From now on, I will only use `mricrogl`
+and again make sure to source the `zshrc` or start up a new terminal.
+```
+source ~/.zshrc
+```
+Now, running `mricrogl` should start up the program also. From now on, I will only use `mricrogl`
 in any of the instructions. Note, that if you didn't set the alias, you can and should
 run `MRIcroGL` instead.
+
+# Using the program for interactive viewing
+
+Most features of the program when interactively viewing NIfTI images are covered
+by the series of videos that Andy Jahn made (linked above) and by the useful videos
+provided by Chris Rorden himself on his youtube channel (for example: [MRIcroGL Introduction](https://www.youtube.com/watch?v=CL9X3zPUYN0)).
+For this reason, I will not go into the interactive viewing myself.
+
+# Using MRIcroGL for scripting
+
+MRIcroGL provides some instructions and help regarding scripting [here](https://github.com/rordenlab/MRIcroGL/blob/master/PYTHON.md).
+Here, I want to provide a few useful step-by-step guide to use some of its scripting features
+with some example data. Although I am sure much more is possible than what I show here,
+it will set you up for a good start and already provide you some powerful possibilities.
+
+Overall, you can write your scripts using Python code. However, it is not run via
+the typical python interpreter but via MRIcroGL. So, as the instructions linked above
+state, you can run a script (for example `my_script.py`) using `mricrogl my_script.py`.
