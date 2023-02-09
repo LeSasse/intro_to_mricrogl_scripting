@@ -26,7 +26,7 @@ fi
 curl -fLO https://github.com/rordenlab/MRIcroGL/releases/latest/download/MRIcroGL_linux.zip
 unzip MRIcroGL_linux.zip
 cp ${CODE_DIR}/startup.py MRIcroGL/Resources/script/.
-sudo cp -r -i MRIcroGL /usr/local
+sudo cp -r -i MRIcroGL /usr/local/.
 
 source ~/.zshrc
 

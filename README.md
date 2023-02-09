@@ -26,21 +26,24 @@ cd intro_to_mricrogl_scripting
 # Install MRIcroGL
 
 Download the version that works for your system from the [MRIcroGL NITRC page](https://www.nitrc.org/projects/mricrogl).
-
+You can also download from the [rordenlab GitHub page](https://github.com/rordenlab/MRIcroGL)
+via command line by running (the link points to a linux version -- check out the rordenlab GitHub Page for other versions):
+```
+curl -fLO https://github.com/rordenlab/MRIcroGL/releases/latest/download/MRIcroGL_linux.zip
+```
 I can provide some instructions on how I like to set it up on my system (Ubuntu 20.04),
 but check what works for your system. Instructions for a [mac can be found in this
 video by Andy Jahn](https://www.youtube.com/watch?v=Htid2mbyav8). He also provides a
 nice series of videos on using MRIcroGL's UI to analyse your results (and many
 other useful neuroimaging videos, so check him out).
 
-I like to install it as follows. After downloading the zipped MRIcroGL files, run:
 ```
 unzip MRIcroGL_linux.zip
 ```
 Then I move or copy the folder into `/usr/local` where MRIcroGL will try to find
 its ressources/files when starting up.
 ```
-sudo cp -r MRIcroGL /usr/local
+sudo cp -r MRIcroGL /usr/local/.
 ```
 To be able to use the MRIcroGL binary from anywhere, add the `MRIcroGL` directory
 to `$PATH` in your `zshrc` (or `bashrc` or some similar file):
