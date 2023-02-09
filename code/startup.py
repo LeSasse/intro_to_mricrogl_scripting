@@ -1,8 +1,6 @@
 import gl
 import sys
 
-import os
-
 print(sys.version)
 print(gl.version())
 
@@ -10,9 +8,6 @@ print(gl.version())
 gl.resetdefaults()
 gl.loadimage("mni152")
 
-print("HELLOWORLD")
-curr_dir = os.getcwd()
-print(curr_dir)
 # set up background colors and colorbar
 gl.backcolor(255, 255, 255)
 gl.colorbarposition(2)
