@@ -63,6 +63,9 @@ Now, running `mricrogl` should start up the program also. From now on, I will on
 in any of the instructions. Note, that if you didn't set the alias, you can and should
 run `MRIcroGL` instead.
 
+I have added a [script that I use to install MRIcroGL](https://github.com/LeSasse/intro_to_mricrogl_scripting/blob/main/code/install.sh)
+with my preferred settings.
+
 # Using the program for interactive viewing
 
 Most features of the program when interactively viewing NIfTI images are covered
