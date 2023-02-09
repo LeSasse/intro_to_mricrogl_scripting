@@ -168,6 +168,8 @@ Importantly, I typically have a line that defines the size and location of the w
 # plot window size and position (left, top, width, height)
 gl.windowposition(2000, 200, 3010, 1000)
 ```
+This will look different depending on your set up so you have to find the window settings
+that work for you.
 Then I define a path to the image I want to load and plot:
 ```
 # path to the gradient directory
@@ -213,3 +215,15 @@ gl.savebmp(f"../images/gradient_one.png")
 And Done! The result should look something like this:
 
 ![plot of first gradient](images/gradient_one.png)
+
+## The Mosaic String
+
+If you still have the viewer open from running the above script, you should
+see the mosaic options on the left somewhere. It looks like that:
+![mosaic settings](images/mosaic_options.png)
+
+You can play around with these options and see how that changes the image. Importantly,
+when you change the image, MRIcroGL provides you a string that creates this new, changed
+mosaic. So you can then copy and paste that string and use it programmatically in
+the `gl.mosaic` function. See an example in the red box below:
+![mosaic string](images/mosaic_string.png)
