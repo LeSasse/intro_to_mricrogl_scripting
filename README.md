@@ -18,8 +18,10 @@ It just looks fancy!
 
 # Set up for the tutorial
 
+```
 git clone https://github.com/LeSasse/intro_to_mricrogl_scripting.git
 cd intro_to_mricrogl_scripting  
+```
 
 # Install MRIcroGL
 
