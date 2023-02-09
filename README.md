@@ -1,4 +1,4 @@
-# Intro to mricrogl scripting
+# Intro to MRIcroGL scripting
 
 Introduction to scripting with MRIcroGL to make nice plots of brain maps with less effort.
 
