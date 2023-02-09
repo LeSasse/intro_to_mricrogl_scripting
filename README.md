@@ -220,10 +220,12 @@ And Done! The result should look something like this:
 
 If you still have the viewer open from running the above script, you should
 see the mosaic options on the left somewhere. It looks like that:
+
 ![mosaic settings](images/mosaic_options.png)
 
 You can play around with these options and see how that changes the image. Importantly,
 when you change the image, MRIcroGL provides you a string that creates this new, changed
 mosaic. So you can then copy and paste that string and use it programmatically in
 the `gl.mosaic` function. See an example in the red box below:
+
 ![mosaic string](images/mosaic_string.png)
