@@ -104,7 +104,7 @@ for the interactive viewer. That is, you can make a script called `startup.py`
 and place it in the `/usr/local/MRIcroGL/Resources/script/` directory
 and then MRIcroGL will always run this script when you start the application.
 
-You can write a new script either by clicking on `scripting` > `new` in the MRIcroGL
+You can write a new script by clicking on `scripting` > `new` in the MRIcroGL
 UI. This will start a new file in MRIcroGL's editor with the following default template:
 ```
 import gl
@@ -116,7 +116,7 @@ print(gl.version())
 # set defaults and load a template
 gl.resetdefaults()
 ```
-I like to use my own text editor so, I typically write a script in my own editor first
+I like to use my own text editor, so I typically write a script in my own editor first
 and then open it in MRIcroGL later.
 
 In particular, I prefer a white background over the black default for the main
@@ -187,9 +187,11 @@ You can load the gradient as an overlay:
 ```
 gl.overlayload(nii)
 ```
-The opacity function changes
-the opacity of the image loaded which in our case is the mni152 template loaded in the beginning. It does not change the
-opacity of the overlay (there is another function for that).
+The opacity function changes 
+the opacity of the image indicated in the first parameter ('0' in this case)
+with 0 being the template, 1 being the first overlay and so on. In our case we set
+opacity for the mni152 template loaded in the beginning. It does not change the
+opacity of the overlay.
 I like to make the template slightly translucent, so that you can still see the template
 but the overlay has somewhat more intense colors.
 ```

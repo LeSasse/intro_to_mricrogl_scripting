@@ -37,7 +37,8 @@ gl.overlayload(nii)
 
 # the opacity function changes the opacity of the image loaded which in our
 # case is the mni152 template loaded in the beginning. It does not change the
-# opacity of the overlay (there is another function for that).
+# opacity of the overlay. The first input (0) gives determines the layer for which
+# to set the opacity, 0 being the template, 1 being the first overlay and so on.
 # I like to make the template slightly translucent, so that you can still see the template
 # but the overlay has somewhat more intense colors
 gl.opacity(0, 40)
