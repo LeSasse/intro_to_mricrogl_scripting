@@ -161,7 +161,8 @@ paths may be broken.
 
 ## Plot a basic mosaic of the first gradient component
 
-The full script for this plot can be found in `code/01_plot_slices_gradient_one.py`.
+The full script for this plot can be found in `code/01_plot_mosaic_gradient_one.py`.
+You can run it in the `code` directory as `mricrogl 01_plot_mosaic_gradient_one.py`.
 
 Importantly, I typically have a line that defines the size and location of the window:
 ```
@@ -229,3 +230,58 @@ mosaic. So you can then copy and paste that string and use it programmatically i
 the `gl.mosaic` function. See an example in the red box below:
 
 ![mosaic string](images/mosaic_string.png)
+
+## Plotting multiple images in the same way
+
+We made one nice looking image in a script, so what? This would have been easily
+done also by manually doing it in the interactive viewer and saving the image.
+But of course, as always, the major advantage of scripting are 1) the image is 
+always produced in the same way and 2) perhaps more importantly, you can plot any
+number of NIfTI images in exactly the same way. This can be particularly great when
+doing exploratory analyses over multiple settings, or doing simple sanity checks to
+validate your output or when making a comprehensive list of plots for a supplementary.
+
+For this reason I have also provided a simple example of how to produce the previous
+plot for all 10 gradients in the data set. 
+I will briefly discuss the relevant changes here, but you can find the full script
+in `code/02_plot_mosaic_all_gradients.py`. Again, you can run it from the `code`
+directory as `mricrogl 02_plot_mosaic_all_gradients.py`.
+
+First, you can make a list of all gradient NIfTI files. Here, I conveniently do this
+using the `os` module since I know the content of the directory only contains the
+files I want to plot (and it contains all of them):
+```
+gradients = os.listdir(gradient_file_dir)
+```
+Then the image for each gradient is just one for loop away:
+```
+for gradient in gradients:
+    # get the filename without the extension to save the png with a related,
+    # but unique name:
+    gradient_name = gradient.split(".nii")[0]
+    nii = os.path.join(gradient_file_dir, gradient)
+
+    gl.overlayload(nii)
+    gl.colorname(1, "blue2red")
+    gl.mosaic("A R 0 C R 0 S R 0; A R -0 C R -0 S R -0")
+    gl.savebmp(f"../images/{gradient_name}.png")
+    # To make sure the previous overlay is closed and does not interfere
+    # with the next we call:
+    gl.overlaycloseall()
+```
+
+When you run the script provided, your output should look like the images I provide
+in the `images` directory.
+
+# Debugging
+
+Luckily, the python scripting that MRIcroGL requires to make the desired results
+is quite simple and straightforward. But obviously things rarely work out the first
+time, so if anything does not work as expected some minimal debugging is required.
+Unfortunately, the output of the python script is not directed to the terminal when running
+from command line, so if you experience any issues, simply open a script in MRIcroGL
+(`scripting`>`Open`) and run it from there (`Ctrl + R`) and this will typically
+display errors or output in the console on the bottom right. It will look something like
+this:
+
+![debugging info](images/debugging.png)
